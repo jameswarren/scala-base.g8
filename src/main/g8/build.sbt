@@ -26,10 +26,11 @@ def jwProject(name: String, directory: String): Project = {
     .settings(
       (Compiling.compileSettings
         ++ Testing.testSettings
+        ++ Assembly.assemblySettings
         ++ Plugins.pluginSettings): _*
     )
 }
 
-lazy val core = jwProject("$name$-core", "root")
+lazy val core = jwProject("$name$-core", "core")
 
 onLoad in Global ~= (_ andThen ("project $name$-core" :: _))
