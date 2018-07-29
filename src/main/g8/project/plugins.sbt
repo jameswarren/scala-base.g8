@@ -1,8 +1,6 @@
 addSbtPlugin("com.eed3si9n" %% "sbt-assembly" % "0.14.5")
 
-addSbtPlugin("com.frugalmechanic" % "fm-sbt-s3-resolver" % "0.13.0")
-
-addSbtPlugin("com.lucidchart" % "sbt-cross" % "3.0")
+addSbtPlugin("com.lucidchart" % "sbt-scalafmt" % "1.15")
 
 addSbtPlugin("com.typesafe.sbt" %% "sbt-license-report" % "1.2.0")
 
