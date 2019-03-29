@@ -15,13 +15,9 @@ version in ThisBuild := {
   if (s) { v + "-SNAPSHOT" } else v
 }
 
-scalafmtOnCompile in ThisBuild := true
-
-scalafmtFailTest in ThisBuild := false
-
 publish := {}
 
-def jwProject(name: String, directory: String): Project = {
+def projectDef(name: String, directory: String): Project = {
   Project(name, file(directory))
     .settings(
       (Compiling.compileSettings
@@ -31,6 +27,6 @@ def jwProject(name: String, directory: String): Project = {
     )
 }
 
-lazy val core = jwProject("$name$-core", "core")
+lazy val core = projectDef("$name$-core", "core")
 
 onLoad in Global ~= (_ andThen ("project $name$-core" :: _))
