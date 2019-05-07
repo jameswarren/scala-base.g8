@@ -11,7 +11,7 @@
  <check level="warning" class="org.scalastyle.scalariform.SpacesBeforePlusChecker" enabled="true"/>
  <check level="warning" class="org.scalastyle.file.FileLineLengthChecker" enabled="true">
   <parameters>
-   <parameter name="maxLineLength"><![CDATA[100]]></parameter>
+   <parameter name="maxLineLength"><![CDATA[120]]></parameter>
    <parameter name="tabSize"><![CDATA[2]]></parameter>
   </parameters>
  </check>
@@ -22,12 +22,12 @@
  </check>
  <check level="warning" class="org.scalastyle.scalariform.ObjectNamesChecker" enabled="true">
   <parameters>
-   <parameter name="regex"><![CDATA[[A-Z][A-Za-z]*]]></parameter>
+   <parameter name="regex"><![CDATA[[A-Za-z]*]]></parameter>
   </parameters>
  </check>
  <check level="warning" class="org.scalastyle.scalariform.PackageObjectNamesChecker" enabled="true">
   <parameters>
-   <parameter name="regex"><![CDATA[^[a-z][A-Za-z]*\$]]></parameter>
+   <parameter name="regex"><![CDATA[[A-Za-z]*\$]]></parameter>
   </parameters>
  </check>
  <check level="warning" class="org.scalastyle.scalariform.EqualsHashCodeChecker" enabled="true"/>
@@ -78,7 +78,7 @@
  <check level="warning" class="org.scalastyle.scalariform.IfBraceChecker" enabled="true">
   <parameters>
    <parameter name="singleLineAllowed"><![CDATA[true]]></parameter>
-   <parameter name="doubleLineAllowed"><![CDATA[false]]></parameter>
+   <parameter name="doubleLineAllowed"><![CDATA[true]]></parameter>
   </parameters>
  </check>
  <check level="warning" class="org.scalastyle.scalariform.MethodLengthChecker" enabled="true">
@@ -106,16 +106,16 @@
         enabled="true"/>
  <check level="warning" class="org.scalastyle.scalariform.LowercasePatternMatchChecker"
         enabled="true"/>
- <check level="warning" class="org.scalastyle.scalariform.NamedArgumentChecker" enabled="true">
+ <check level="warning" class="org.scalastyle.scalariform.NamedArgumentChecker" enabled="false">
   <parameters>
    <parameter name="checkString">false</parameter>
    <parameter name="ignoreMethod">^set.+\$</parameter>
   </parameters>
  </check>
- <check level="warning" class="org.scalastyle.scalariform.NotImplementedErrorUsage" enabled="true"/>
+ <check level="warning" class="org.scalastyle.scalariform.NotImplementedErrorUsage" enabled="false"/>
  <check level="warning" class="org.scalastyle.scalariform.ParameterNumberChecker" enabled="true">
   <parameters>
-   <parameter name="maxParameters">3</parameter>
+   <parameter name="maxParameters">6</parameter>
   </parameters>
  </check>
  <check level="warning" class="org.scalastyle.scalariform.TodoCommentChecker" enabled="true">

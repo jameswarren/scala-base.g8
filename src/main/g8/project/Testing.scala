@@ -4,10 +4,8 @@ import sbt.Keys._
 object Testing {
   def testLibraries(scope: String): Seq[ModuleID] = {
     val prefixes = Seq(
-      "org.scalacheck" %% "scalacheck" % "1.13.4",
-      "org.scalatest" %% "scalatest" % "3.0.5",
-      "org.pegdown" % "pegdown" % "1.6.0",
-      "org.mockito" % "mockito-core" % "2.2.9"
+      "org.scalacheck" %% "scalacheck" % "1.14.0",
+      "org.scalatest" %% "scalatest" % "3.0.5"
     )
     prefixes map { _ % scope }
   }

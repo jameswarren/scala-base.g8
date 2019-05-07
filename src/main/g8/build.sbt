@@ -1,6 +1,8 @@
 import scala.io.Source
 import scala.util.Try
 
+import resource.managed
+
 name := "$name$"
 
 organization in ThisBuild := "$organization$"
@@ -10,7 +12,9 @@ scalaVersion := "$scalaVersion$"
 isSnapshot in ThisBuild := !sys.env.getOrElse("SBT_RELEASE", "false").toBoolean
 
 version in ThisBuild := {
-  val v = Try { Source.fromFile("VERSION").getLines.next }.getOrElse("unknown")
+  val v = Try {
+    managed(Source.fromFile("VERSION")).acquireAndGet { s => s.getLines.next }
+  }.getOrElse("unknown")
   val s = (isSnapshot in ThisBuild).value
   if (s) { v + "-SNAPSHOT" } else v
 }
