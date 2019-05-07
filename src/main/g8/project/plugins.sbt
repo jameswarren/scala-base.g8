@@ -1,5 +1,7 @@
 addSbtPlugin("com.eed3si9n" %% "sbt-assembly" % "0.14.9")
 
+addSbtPlugin("com.frugalmechanic" % "fm-sbt-s3-resolver" % "0.16.0")
+
 addSbtPlugin("com.orrsella" % "sbt-stats" % "1.0.7")
 
 addSbtPlugin("com.softwaremill.clippy" % "plugin-sbt" % "0.6.1")
