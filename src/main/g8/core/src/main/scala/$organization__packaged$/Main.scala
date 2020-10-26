@@ -1,4 +1,4 @@
-package com.jw
+package $organization$
 
 object Main {
 
