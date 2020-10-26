@@ -7,7 +7,7 @@ ThisBuild / isSnapshot := !sys.env.getOrElse("SBT_RELEASE", "false").toBoolean
 ThisBuild / version := {
   val ver = IO.readLines(new File("./VERSION")).mkString
   if ((ThisBuild / isSnapshot).value) {
-    s"$ver-SNAPSHOT"
+    s"\$ver-SNAPSHOT"
   } else ver
 }
 
