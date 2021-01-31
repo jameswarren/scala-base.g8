@@ -22,15 +22,15 @@ def projectDef(name: String, directory: String): Project = {
 lazy val compileSettings = Seq(
   javacOptions ++= Seq("-source", "1.8", "-target", "1.8", "-Xlint"),
   scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-language:higherKinds", "-Ymacro-annotations"),
-  addCompilerPlugin("org.typelevel" %% "kind-projector"     % "0.11.0" cross CrossVersion.full),
-  addCompilerPlugin("com.olegpy"    %% "better-monadic-for" % "0.3.0")
+  addCompilerPlugin("org.typelevel" %% "kind-projector"     % "0.11.3" cross CrossVersion.full),
+  addCompilerPlugin("com.olegpy"    %% "better-monadic-for" % "0.3.1")
 )
 
 lazy val testSettings = Seq(
   testOptions += Tests.Argument("-oD"),
   libraryDependencies ++= Seq(
-    "org.scalacheck" %% "scalacheck" % "1.14.3",
-    "org.scalatest"  %% "scalatest"  % "3.2.0"
+    "org.scalacheck" %% "scalacheck" % "1.15.2",
+    "org.scalatest"  %% "scalatest"  % "3.2.2"
   ) map { _ % Test }
 )
 
@@ -52,7 +52,7 @@ lazy val assemblySettings = {
 
 lazy val pluginSettings = {
   val ammoniteSettings = List(
-    libraryDependencies += "com.lihaoyi" % "ammonite" % "2.2.0" % "test" cross CrossVersion.full,
+    libraryDependencies += "com.lihaoyi" % "ammonite" % "2.3.8" % "test" cross CrossVersion.full,
     Test / sourceGenerators += Def.task {
       val file = (Test / sourceManaged).value / "amm.scala"
       IO.write(file, """object amm extends App { ammonite.Main().run() }""")
